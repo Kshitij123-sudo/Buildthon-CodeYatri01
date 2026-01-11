@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Travel Assistant</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="index.html">
+    <div class="d-flex flex-row">
+      <img src="https://static.vecteezy.com/system/resources/thumbnails/028/898/066/small_2x/indian-marathi-man-showing-namaste-or-welcome-gesture-eps-10-file-vector.jpg"
+           class="navbar-image mr-1">
+      <p class="navbar-heading-text mt-3">Maharashtra Tour Guide</p>
+    </div>
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-link active" id ="navbar-items1" href="index.html">Home</a>
+      <a class="nav-link" id ="navbar-items2" href="destinations.html">Destinations</a>
+      <a class="nav-link" id ="navbar-items3" href="itinerary.html">AI Itinerary</a>
+      <a class="nav-link"id ="navbar-items4" href="chatbot.html">AI Assistant</a>
+      <a class="nav-link" id ="navbar-items5" href="guides.html">Hire Guide</a>
+    </div>
+  </div>
+</nav>
+<div class="ai-chatbot-bg-container pt-5 pb-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 text-center">
+        <h1 class="ai-chatbot-heading">AI Travel Assistant 🤖</h1>
+        <p class="ai-chatbot-subtext">
+          Ask me anything about traveling in Maharashtra.
+        </p>
+      </div>
+
+      <div class="col-12 col-md-8">
+        <div class="ai-chatbot-card shadow">
+          <div class="ai-chatbot-messages" id="chatMessages">
+            <p class="bot-message">
+              Hello! 👋 I can help you plan trips across Maharashtra.
+            </p>
+          </div>
+
+          <div class="ai-chatbot-input d-flex">
+            <input
+              type="text"
+              id="userInput"
+              class="form-control"
+              placeholder="Ask something like: Suggest a 2-day trip in Pune"
+            />
+            <button class="btn btn-warning ml-2" onclick="sendMessage()">
+                Send
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

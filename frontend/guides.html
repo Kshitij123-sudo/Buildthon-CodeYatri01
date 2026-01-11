@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire a Tour Guide | Maharashtra Tourism</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <div class="d-flex align-items-center">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/028/898/066/small_2x/indian-marathi-man-showing-namaste-or-welcome-gesture-eps-10-file-vector.jpg"
+                    class="navbar-image">
+                <p class="navbar-heading-text mb-0">Maharashtra Tour Guide</p>
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="destinations.html">Destinations</a>
+                <a class="nav-link" href="itinerary.html">AI Itinerary</a>
+                <a class="nav-link" href="chatbot.html">AI Assistant</a>
+                <a class="nav-link active" href="guides.html">Hire Guide</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="Tour-Guide-bg-container pt-5 pb-5 mt-5">
+        <div class="container pt-4">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="section-heading mb-3">Expert Tour Guides</h1>
+                    <p class="Homepage-Subtext text-dark mx-auto mb-4" style="max-width: 700px;">
+                        Make your journey unforgettable with our passionate and experienced local guides.
+                        Discover the real Maharashtra through their eyes.
+                    </p>
+
+                    <!-- Search Bar Section -->
+                    <div class="d-flex justify-content-center mb-5">
+                        <div class="input-group" style="max-width: 500px;">
+                            <input type="text" id="locationSearch" class="form-control"
+                                placeholder="Search guides by location (e.g. Pune, Mumbai)..." onkeyup="filterGuides()">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary-custom" type="button" onclick="filterGuides()"
+                                    style="border-radius: 0 50px 50px 0;">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guide 1 -->
+                <div class="col-12 col-md-6 col-lg-4 guide-item" data-location="Nashik Shirdi">
+                    <div class="card Tour-Guide-card mb-5 p-4 text-center">
+                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                            class="Tour-Guide-card-image mx-auto mb-3" alt="Guide Avatar" />
+                        <h2 class="Tour-Guide-card-heading">Kiran Patel</h2>
+                        <div class="guide-location mb-2"><i class="fas fa-map-marker-alt text-danger"></i>
+                            <strong>Location:</strong> Nashik</div>
+                        <p class="Tour-Guide-card-paragraph text-muted">"Hi there! I'm Kiran, a passionate guide with a
+                            love for hidden gems and rich history. I'm here to make your journey unforgettable with
+                            local insights and a whole lot of fun."</p>
+                        <button class="btn btn-outline-warning btn-sm mt-auto"
+                            onclick="alert('Kiran is available! Contact: kiran@example.com')">View Profile</button>
+                    </div>
+                </div>
+
+                <!-- Guide 2 -->
+                <div class="col-12 col-md-6 col-lg-4 guide-item" data-location="Pune Forts">
+                    <div class="card Tour-Guide-card mb-5 p-4 text-center">
+                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                            class="Tour-Guide-card-image mx-auto mb-3" alt="Guide Avatar" />
+                        <h2 class="Tour-Guide-card-heading">Ram Kale</h2>
+                        <div class="guide-location mb-2"><i class="fas fa-map-marker-alt text-danger"></i>
+                            <strong>Location:</strong> Pune</div>
+                        <p class="Tour-Guide-card-paragraph text-muted">"Welcome! I'm Ram, your friendly local guide.
+                            With years of experience and deep knowledge of Maharashtra's forts, I ensure your trip is
+                            informative and memorable."</p>
+                        <button class="btn btn-outline-warning btn-sm mt-auto"
+                            onclick="alert('Ram is available! Contact: ram@example.com')">View Profile</button>
+                    </div>
+                </div>
+
+                <!-- Guide 3 -->
+                <div class="col-12 col-md-6 col-lg-4 guide-item" data-location="Pune Mumbai">
+                    <div class="card Tour-Guide-card mb-5 p-4 text-center">
+                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                            class="Tour-Guide-card-image mx-auto mb-3" alt="Guide Avatar" />
+                        <h2 class="Tour-Guide-card-heading">Priya Deshmukh</h2>
+                        <div class="guide-location mb-2"><i class="fas fa-map-marker-alt text-danger"></i>
+                            <strong>Location:</strong> Pune / Mumbai</div>
+                        <p class="Tour-Guide-card-paragraph text-muted">"Namaste! I specialize in heritage walks and
+                            cultural tours in Pune and Mumbai. Let's explore the architectural marvels and stories of
+                            the past together."</p>
+                        <button class="btn btn-outline-warning btn-sm mt-auto"
+                            onclick="alert('Priya is available! Contact: priya@example.com')">View Profile</button>
+                    </div>
+                </div>
+
+                <!-- Guide 4 -->
+                <div class="col-12 col-md-6 col-lg-4 guide-item" data-location="Tadoba Pench Nagpur">
+                    <div class="card Tour-Guide-card mb-5 p-4 text-center">
+                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                            class="Tour-Guide-card-image mx-auto mb-3" alt="Guide Avatar" />
+                        <h2 class="Tour-Guide-card-heading">Amit Kulkarni</h2>
+                        <div class="guide-location mb-2"><i class="fas fa-map-marker-alt text-danger"></i>
+                            <strong>Location:</strong> Tadoba</div>
+                        <p class="Tour-Guide-card-paragraph text-muted">"Hello! I’m Amit, a wildlife enthusiast. If you
+                            are visiting Tadoba or Pench, allow me to guide you through the jungle to spot tigers and
+                            diverse birdlife."</p>
+                        <button class="btn btn-outline-warning btn-sm mt-auto"
+                            onclick="alert('Amit is available! Contact: amit@example.com')">View Profile</button>
+                    </div>
+                </div>
+
+                <!-- Guide 5 -->
+                <div class="col-12 col-md-6 col-lg-4 guide-item" data-location="Mumbai">
+                    <div class="card Tour-Guide-card mb-5 p-4 text-center">
+                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                            class="Tour-Guide-card-image mx-auto mb-3" alt="Guide Avatar" />
+                        <h2 class="Tour-Guide-card-heading">Sneha Jadhav</h2>
+                        <div class="guide-location mb-2"><i class="fas fa-map-marker-alt text-danger"></i>
+                            <strong>Location:</strong> Mumbai</div>
+                        <p class="Tour-Guide-card-paragraph text-muted">"Hi! I’m Sneha. I love food and festivals. Join
+                            me for a culinary tour of Mumbai's street food and experience the vibrant local culture
+                            firsthand."</p>
+                        <button class="btn btn-outline-warning btn-sm mt-auto"
+                            onclick="alert('Sneha is available! Contact: sneha@example.com')">View Profile</button>
+                    </div>
+                </div>
+
+                <!-- Guide 6 -->
+                <div class="col-12 col-md-6 col-lg-4 guide-item" data-location="Konkan Mahabaleshwar">
+                    <div class="card Tour-Guide-card mb-5 p-4 text-center">
+                        <img src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg"
+                            class="Tour-Guide-card-image mx-auto mb-3" alt="Guide Avatar" />
+                        <h2 class="Tour-Guide-card-heading">Vikram Singh</h2>
+                        <div class="guide-location mb-2"><i class="fas fa-map-marker-alt text-danger"></i>
+                            <strong>Location:</strong> Konkan</div>
+                        <p class="Tour-Guide-card-paragraph text-muted">"Greetings! I’m Vikram. From the beaches of
+                            Konkan to the hills of Mahabaleshwar, I can guide you through the best scenic routes and
+                            adventure spots."</p>
+                        <button class="btn btn-outline-warning btn-sm mt-auto"
+                            onclick="alert('Vikram is available! Contact: vikram@example.com')">View Profile</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function filterGuides() {
+            // 1. Get the search query
+            var input = document.getElementById("locationSearch");
+            var filter = input.value.toLowerCase();
+
+            // 2. Get all guide items
+            var guides = document.getElementsByClassName("guide-item");
+
+            // 3. Loop through and hide/show based on matches
+            for (var i = 0; i < guides.length; i++) {
+                var locationData = guides[i].getAttribute("data-location").toLowerCase();
+
+                // Allow searching by location data OR the visible text content
+                if (locationData.indexOf(filter) > -1) {
+                    guides[i].style.display = ""; // Show
+                } else {
+                    guides[i].style.display = "none"; // Hide
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

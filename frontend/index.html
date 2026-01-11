@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maharashtra Tour Guide</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Glassmorphic Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <a class="navbar-brand" href="index.html">
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/028/898/066/small_2x/indian-marathi-man-showing-namaste-or-welcome-gesture-eps-10-file-vector.jpg"
+        class="navbar-image" alt="Logo">
+      <p class="navbar-heading-text">Maharashtra Tour Guide</p>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav ml-auto">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="destinations.html">Destinations</a>
+        <a class="nav-link" href="itinerary.html">AI Itinerary</a>
+        <a class="nav-link" href="chatbot.html">AI Assistant</a>
+        <a class="nav-link" href="guides.html">Hire Guide</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="BackgroundHomePage">
+    <h1 class="Homepage-Heading">Maharashtra<br>Unlimited</h1>
+    <p class="Homepage-Subtext">Experience the land of forts, beaches, and divine spirituality. Your journey into the
+      heart of India begins here.</p>
+
+    <div class="btn-wrapper">
+      <a href="itinerary.html" class="btn-primary-custom">Plan a Trip</a>
+      <a href="destinations.html" class="btn-secondary-custom">Explore Destinations</a>
+    </div>
+    <div class="scroll-down-arrow" onclick="scrollToMap()">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </div>
+
+  <!-- Explore Map Section -->
+  <div class="container-fluid py-5" style="background-color: #fcfcf5;">
+    <div class="text-center mb-5 mt-4">
+      <h2 class="section-heading text-uppercase"
+        style="font-family: 'Playfair Display', serif; font-weight: 700; color: #2c2c2c; letter-spacing: 2px;">Your
+        Dream Trip Starts Now</h2>
+      <p class="text-muted" style="font-family: 'Roboto', sans-serif;">Explore the map to find your next adventure in
+        Maharashtra</p>
+    </div>
+
+    <div class="container">
+      <div id="home-map"
+        style="height: 600px; width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);"></div>
+    </div>
+  </div>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <script>
+    // Initialize Home Map
+    document.addEventListener('DOMContentLoaded', function () {
+      var map = L.map('home-map', {
+        scrollWheelZoom: false // Disable scroll zoom to prevent page scroll hijacking
+      }).setView([19.7515, 75.7139], 7); // Center of Maharashtra
+
+      // Use a nice Voyager theme or similar light theme
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+      }).addTo(map);
+
+      // Add some major markers with popups
+      var locations = [
+        { name: "Mumbai", lat: 19.0760, lng: 72.8777 },
+        { name: "Pune", lat: 18.5204, lng: 73.8567 },
+        { name: "Nashik", lat: 19.9975, lng: 73.7898 },
+        { name: "Aurangabad", lat: 19.8762, lng: 75.3433 },
+        { name: "Mahabaleshwar", lat: 17.9237, lng: 73.6586 },
+        { name: "Nagpur", lat: 21.1458, lng: 79.0882 },
+        { name: "Lonavala", lat: 18.7518, lng: 73.4015 },
+        { name: "Shirdi", lat: 19.7697, lng: 74.4784 },
+        { name: "Kolhapur", lat: 16.7028, lng: 74.2405 }
+      ];
+
+      locations.forEach(function (loc) {
+        L.marker([loc.lat, loc.lng]).addTo(map)
+          .bindPopup('<div style="text-align:center;"><b>' + loc.name + '</b><br><span style="font-size:12px; color: grey;">Click to plan a trip here!</span></div>');
+      });
+
+      // Scroll to map function
+      window.scrollToMap = function () {
+        // Find the map section or container
+        const mapSection = document.querySelector('.container-fluid.py-5');
+        if (mapSection) {
+          mapSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+    });
+  </script>
+</body>
+
+</html>
